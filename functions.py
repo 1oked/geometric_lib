@@ -1,2 +1,3 @@
 def IsNumber(num):
-    return num.isdigit()
+    n = str(num)
+    return n.isdigit()
