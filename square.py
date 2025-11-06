@@ -1,12 +1,17 @@
 import unittest
+import functions as f
 
 def area(a):
     ''' Возвращает площадь квадрата со стороной a '''
+    if not f.IsNumber(a):
+        return 0
     return a * a
 
 
 def perimeter(a):
     ''' Возвращает периметр квадрата со стороной a '''
+    if not f.IsNumber(a):
+        return 0
     return 4 * a
 
 
@@ -21,4 +26,8 @@ class SquareTestCase(unittest.TestCase):
     
     def test_zero_area(self):
         res = area(0)
+        self.assertEqual(res, 0)
+
+    def test_not_a_number(self):
+        res = perimeter("not a number")
         self.assertEqual(res, 0)
